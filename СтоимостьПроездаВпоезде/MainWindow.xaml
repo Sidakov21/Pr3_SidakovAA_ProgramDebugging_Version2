@@ -1,0 +1,35 @@
+﻿<Window x:Class="СтоимостьПроездаВпоезде.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:СтоимостьПроездаВпоезде"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="450">
+    <Grid>
+        <Label Content="Расстояние (км)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0"/>
+        <TextBox x:Name="distanceTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="150,20,0,0" PreviewTextInput="NumericOnly"/>
+
+        <Label Content="Количество билетов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,60,0,0"/>
+        <TextBox x:Name="ticketsTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="150,67,0,0" PreviewTextInput="NumericOnly"/>
+
+        <GroupBox Header="Комфортабельность" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="91" Margin="267,15,0,0">
+            <StackPanel x:Name="comfortStackPanel" Height="70">
+                <RadioButton Content="плацкарт" x:Name="platzkartRadioButton" GroupName="ComfortGroup"/>
+                <RadioButton Content="купе" x:Name="kupeRadioButton" GroupName="ComfortGroup"/>
+                <RadioButton Content="полулюкс" x:Name="polulyuksRadioButton" GroupName="ComfortGroup"/>
+                <RadioButton Content="люкс" x:Name="luxeRadioButton" GroupName="ComfortGroup"/>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,102,0,0">
+            <Label Content="Стоимость билетов с" Foreground="DarkRed"/>
+            <Label Content="учетом" Foreground="DarkRed"/>
+            <Label Content="комфортабельности: " Foreground="DarkRed"/>
+        </StackPanel>
+
+        <Button x:Name="resButton" Content="Вычислить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="267,158,0,0" Click="resButton_Click"/>
+        <TextBlock x:Name="finalCost" HorizontalAlignment="Left" Margin="148,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"><Run/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="clearButton" Content="Очистить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="267,183,0,0" Click="clearButton_Click"/>
+    </Grid>
+</Window>
